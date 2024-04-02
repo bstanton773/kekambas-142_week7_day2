@@ -201,13 +201,52 @@ console.log(today);
 ////////////
 
 // Declaring
-
+let people = ["Taylor Swift", "Harry Styles", "Beyonce", "Billie Eilish"];
+console.log(people);
+console.log(typeof people); // object
 
 // Accessing
+console.log(people[3])
+
+console.log(people[-1]) // undefined - negative indices do not work
+
+// Arrays have a built in .length property
+console.log(people.length);
+
+///////////////////
+// Array Methods //
+///////////////////
+
+// arr.push(value) - add value to the end of the arr - returns new length
+console.log(people)
+
+let returnVal = people.push('Lady Gaga');
+console.log(people);
+console.log(returnVal);
+
+// arr.pop() - will remove the last element from the arr and return that element
+let popReturn = people.pop();
+console.log(people);
+console.log(popReturn);
 
 
-// Methods
+const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
+colors.pop()
+colors.push('violet');
+console.log(colors);
 
+// arr.unshift(value) - will add the value to the beginning of the arr and return new lenght
+console.log(people);
+
+let unshiftReturn = people.unshift('Olivia Rodrigo');
+console.log(people);
+console.log(unshiftReturn);
+
+
+// arr.shift() - will remove the first value from the arr and return that value
+let shiftReturn = people.shift();
+console.log(people);
+console.log(shiftReturn);
 
 // Destructuring
 
