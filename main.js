@@ -190,7 +190,7 @@ var myRandomVarName = 'random';
 console.log(myRandomVarName);
 
 
-console.log(today); // ReferenceError: Cannot access 'today' before initialization
+// console.log(today); // ReferenceError: Cannot access 'today' before initialization
 
 let today = 'Tuesday';
 console.log(today);
@@ -248,16 +248,121 @@ let shiftReturn = people.shift();
 console.log(people);
 console.log(shiftReturn);
 
-// Destructuring
+// arr.indexOf(value) - will return the index of the value in the arr or -1 if not present
+console.log(people.indexOf('Beyonce'));
+console.log(people.indexOf('Bad Bunny'));
+
+let nums = [10, 20, 15, 10, 12, 30, 20]
+
+console.log(nums.indexOf(20));
+console.log(nums.indexOf(20, 2));
+
+
+// arr.forEach(callbackFn) - execute the callback function on each element and discard the return value
+
+people.forEach(function(element){console.log(element)})
+
+people.forEach(function(person){console.log(`${person} is a famous singer`)})
+
+// Array Destructuring
+// JS allows us to declare multiple variables at a time and assign them members of the array
+
+console.log(people);
+
+let [tswift, harry, bey, billie] = people;
+
+console.log(tswift);
+console.log(harry);
+console.log(bey);
+console.log(billie);
+
+
+let rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+let [r, o, y] = rainbow;
+
+console.log(r, o, y);
+
+let finalFour = ['UConn', 'Purdue', 'Alabama', 'NC State'];
+
+[team1, team2, team3, team4, team5] = finalFour;
+
+console.log(team1);
+console.log(team2);
+console.log(team3);
+console.log(team4);
+console.log(team5);
 
 
 // Rest Operator ...
+console.log(rainbow);
+let [red, orange, yellow, ...others] = rainbow;
 
+console.log(others);
+
+
+// arr.join(string_to_join_on)
+console.log(people.join(', '))
+
+let things = ['a', 'b', 'c'];
+
+console.log(things.join('-'));
 
 // Array Slicing
+// Allows us to take a portion of the array by its indices. Original arr not modified
+// arr.slice(start, end)
+
+let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+console.log(months);
+console.log(months.slice());
+console.log(months.slice(3));
+console.log(months.slice(1, 4));
+console.log(months.slice(-4))
 
 // Array Splicing
+// arr.splice(start, deleteCount, item1, item2, ..., itemN);
 
+let fruits = ['apple', 'banana', 'peach', 'watermelon'];
+console.log(fruits);
+
+// Insert an item at an index position (assuming not beginning or end)
+// To add 'pear' after banana in the fruits array:
+// start - 2
+// deleteCount - 0
+// item1 - 'pear'
+fruits.splice(2, 0, 'pear');
+console.log(fruits); // original array has been modified
+
+
+// Insert an item at index position and remove item as well
+// To replace 'peach' with 'orange'
+// start - 3
+// deleteCount - 1
+// item1 - 'orange'
+fruits.splice(3, 1, 'orange');
+console.log(fruits);
+
+
+// Insert and/or remove multiple items
+// Replace 'banana', 'pear', and 'orange', with 'kiwi', 'grapes', 'mango'
+
+fruits.splice(1, 3, 'kiwi', 'grapes', 'mango');
+console.log(fruits);
+
+fruits.splice(3, 1, 'dragon fruit', 'lady finger bananas');
+console.log(fruits);
+
+
+/*
+    Make an Array of your favorite foods (minimum 4). Then using the methods we have learned, add "Fried Tarantulas" to the end of the array, then add "Mokh Mchermel" to the front. Then, using a slice of the now modified array, print your original array of favorite foods without my additions.
+*/
+let favFoods = ["tacos", "burgers", "wings", "burritos"];
+console.log(favFoods);
+favFoods.push('Fried Tarantulas')
+console.log(favFoods); 
+favFoods.unshift('Mokh Mchermel');
+console.log(favFoods); 
+console.log(favFoods.slice(1, 5));
 
 ///////////////
 // Functions //
